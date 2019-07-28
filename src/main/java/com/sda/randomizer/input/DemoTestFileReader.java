@@ -13,6 +13,8 @@ public class DemoTestFileReader {
         peopleList = txtFileReader.readFromFile("D:\\JAVA CLASS\\Cursuri\\sda-demo\\src\\main\\resources\\people.txt");
 
         peopleList.forEach(name -> System.out.println(name));
+
+
     }
 
 

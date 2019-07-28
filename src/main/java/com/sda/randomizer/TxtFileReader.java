@@ -21,5 +21,6 @@ public class TxtFileReader implements DataLoader {
             e.printStackTrace();
         }
         return list;
+
     }
 }
