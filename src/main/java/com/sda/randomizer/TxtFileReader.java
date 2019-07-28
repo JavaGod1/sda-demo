@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class txtFileReader {
-    public List<String> txtFileReader(String path) {
+public class TxtFileReader {
+    public List<String> readFromFile(String path) {
         List<String> list = new ArrayList<>();
         try (Stream<String> stream = Files.lines(Paths.get(path))) {
             list = stream
