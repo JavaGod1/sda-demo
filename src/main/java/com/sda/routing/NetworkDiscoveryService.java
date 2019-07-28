@@ -2,16 +2,14 @@ package com.sda.routing;
 
 public class NetworkDiscoveryService implements Connectable {
 
-    @Override
 
-    public boolean connectTo(Network network) {
+    public NetworkDiscoveryService(Network network) {
 
-        if (network.getSignal() == NetworkSignal.HIGH || network.getSignal() == NetworkSignal.MEDIUM) {
-            return true;
-        } else {
+    }
 
-            return false;
-        }
+    public static void connectionMethod(Network network) {
+
+
     }
 
     public void printAllConnectedNetworks(Network network) {
@@ -20,6 +18,24 @@ public class NetworkDiscoveryService implements Connectable {
             System.out.println("Available Network : " + network);
         }
 
+    }
+
+    @Override
+
+    public boolean connectTo(Network network) {
+
+        if (network.getSignal() == NetworkSignal.NO_CONNECTION) {
+
+            network.setConnected(false);
+
+            return false;
+
+        } else {
+
+            network.setConnected(false);
+
+            return true;
+        }
     }
 
 }

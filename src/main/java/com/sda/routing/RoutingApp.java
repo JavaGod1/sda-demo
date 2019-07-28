@@ -6,7 +6,17 @@ public class RoutingApp {
 
         Network network1 = new Network("ASUS1", NetworkSignal.HIGH);
 
-        if (NetworkDiscoveryService.
+        NetworkDiscoveryService service = new NetworkDiscoveryService(network1);
+        service.connectTo(network1);
+
+        System.out.println(network1.getConnected());
+
+
+
+
+
+
+
     }
 
 
