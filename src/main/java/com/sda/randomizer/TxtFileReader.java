@@ -19,6 +19,7 @@ public class TxtFileReader {
             e.printStackTrace();
         }
         return list;
+
     }
 
 }
