@@ -3,8 +3,14 @@
 /build/
 */out/
 */logs/
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
+
+
+# Maven
+log/
+target/
