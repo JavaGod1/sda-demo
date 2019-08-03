@@ -1,5 +1,7 @@
 package com.sda.randomizer;
 
+import com.sda.randomizer.write.DataLoader;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -8,8 +10,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class txtFileReader {
-    public List<String> txtFileReader(String path) {
+public class TxtFileReader implements DataLoader {
+    public List<String> readFromFile(String path) {
         List<String> list = new ArrayList<>();
         try (Stream<String> stream = Files.lines(Paths.get(path))) {
             list = stream
@@ -19,6 +21,6 @@ public class txtFileReader {
             e.printStackTrace();
         }
         return list;
-    }
 
+    }
 }
