@@ -1,4 +1,4 @@
-package com.sda.ExceptionExample.negativeSoldException;
+package com.sda.exceptionexample.negativeSoldException;
 
 public class SoldUtilities {
     private int sold;

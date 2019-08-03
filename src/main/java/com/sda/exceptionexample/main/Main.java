@@ -1,6 +1,6 @@
-package com.sda.ExceptionExample.Main;
+package com.sda.exceptionexample.main;
 
-import com.sda.ExceptionExample.negativeSoldException.SoldUtilities;
+import com.sda.exceptionexample.negativeSoldException.SoldUtilities;
 
 public class Main {
     public static void main(String[] args) {
