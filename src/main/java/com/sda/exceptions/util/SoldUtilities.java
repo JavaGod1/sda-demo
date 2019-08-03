@@ -1,6 +1,6 @@
-package com.sda.exceptionexample.util;
+package com.sda.exceptions.util;
 
-import com.sda.exceptionexample.exceptions.InsufficientFundsException;
+import com.sda.exceptions.exceptions.InsufficientFundsException;
 
 import java.util.logging.Logger;
 

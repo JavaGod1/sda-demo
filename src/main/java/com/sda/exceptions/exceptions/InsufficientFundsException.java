@@ -1,4 +1,4 @@
-package com.sda.exceptionexample.exceptions;
+package com.sda.exceptions.exceptions;
 
 public class InsufficientFundsException extends RuntimeException {
 
