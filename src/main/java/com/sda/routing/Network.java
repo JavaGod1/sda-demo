@@ -1,19 +1,19 @@
 package com.sda.routing;
 
-public class Network {
+import com.sda.routing.util.RandomGenerator;
 
+public class Network {
 
     public NetworkSignal signal;
     private String name;
     private boolean connected;
 
-    public Network(String name, NetworkSignal signal) {
+    public Network(String name) {
         this.name = name;
-        this.signal = signal;
+        this.signal = NetworkSignal.getSignalByRandomNumber(RandomGenerator.generateRandomNumber());
         this.connected = false;
 
         System.out.println("Network name : " + name + "\nnetwork signal : " + signal + "\nnetwork connexion status : " + connected);
-
     }
 
     public String getName() {
