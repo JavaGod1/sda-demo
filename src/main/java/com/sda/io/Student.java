@@ -1,16 +1,17 @@
 package com.sda.io;
 
-import java.io.Serializable;
-import java.time.LocalDate;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
-public class Person implements Serializable {
+import java.io.Serializable;
+import java.util.Date;
+
+public class Student implements Serializable {
 
     private String name;
     private int age;
     private Role role;
-
-    // TODO: write correct string using annotation
-    private LocalDate birthDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date birthDate;
 
     public String getName() {
         return name;
@@ -36,11 +37,11 @@ public class Person implements Serializable {
         this.role = role;
     }
 
-    public LocalDate getBirthDate() {
+    public Date getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -50,7 +51,7 @@ public class Person implements Serializable {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", role=" + role +
-                ", birthDate=" + birthDate.toString() +
+                ", birthDate=" + birthDate +
                 '}';
     }
 }

@@ -1,16 +1,13 @@
 package com.sda.io;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
-public class Person implements Serializable {
+public class User implements Serializable {
 
     private String name;
     private int age;
     private Role role;
-
-    // TODO: write correct string using annotation
-    private LocalDate birthDate;
+    private String birthDate;
 
     public String getName() {
         return name;
@@ -36,11 +33,11 @@ public class Person implements Serializable {
         this.role = role;
     }
 
-    public LocalDate getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -50,7 +47,7 @@ public class Person implements Serializable {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", role=" + role +
-                ", birthDate=" + birthDate.toString() +
+                ", birthDate=" + birthDate +
                 '}';
     }
 }
