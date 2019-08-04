@@ -1,19 +1,18 @@
 package com.sda.routing;
 
-public class Router implements Connectable {
+import com.sda.routing.exceptions.NetworkUnavailableException;
 
+public class Router implements Connectable {
 
     @Override
     public boolean connectTo(Network network) {
-        return true;
-    }
-
-    public void connect(Network network) {
-
-        if (connectTo(network)) {
-
-            System.out.println("You are connected to : " + network + " Netwok");
+        // check if is connectable
+        if (!network.isConnected() ||
+                network.getSignal() == NetworkSignal.NO_CONNECTION) {
+            throw new NetworkUnavailableException("could not connect to network");
+        } else {
+            network.setConnected(true);
+            return true;
         }
     }
-
 }

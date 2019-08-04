@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class NetworkDiscoveryService implements Connectable {
+public class NetworkDiscoveryService {
 
     private Stream<String> networkNames;
     private List<Network> networks = new ArrayList<>();
@@ -23,33 +23,22 @@ public class NetworkDiscoveryService implements Connectable {
 
         // attempt to connect to each network
         networks.forEach(network -> router.connectTo(network));
+
+        printAllConnectedNetworks();
     }
 
-    // TODO: implement this
-    public void printAllConnectedNetworks(Network network) {
-
-        if (connectTo(network)) {
-            System.out.println("Available Network : " + network);
+    private void printAllConnectedNetworks() {
+        for (Network network : networks) {
+            if (network.isConnected()) {
+                System.out.println("Available network: " + network.getName());
+            }
         }
-
     }
 
-    @Override
-
-    public boolean connectTo(Network network) {
-
-        if (network.getSignal() == NetworkSignal.NO_CONNECTION) {
-
-            network.setConnected(false);
-
-            return false;
-
-        } else {
-
-            network.setConnected(false);
-
-            return true;
-        }
+    private void printAllConnectedNetworksWithStreams() {
+        networks.stream()//list to stream
+                .filter(network -> network.isConnected())//filtered stream
+                .forEach(network -> System.out.println(network.getName()));//prints filtered stream
     }
 
 }

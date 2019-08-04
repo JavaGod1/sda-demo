@@ -13,7 +13,7 @@ public class Network {
         this.signal = NetworkSignal.getSignalByRandomNumber(RandomGenerator.generateRandomNumber());
         this.connected = false;
 
-        System.out.println("Network name : " + name + "\nnetwork signal : " + signal + "\nnetwork connexion status : " + connected);
+        System.out.println("Network name : " + name + "\nnetwork signal : " + signal);
     }
 
     public String getName() {
@@ -24,13 +24,13 @@ public class Network {
         return signal;
     }
 
-    public boolean getConnected() {
+    public boolean isConnected() {
         return connected;
     }
 
     public void setConnected(boolean connected) {
         this.connected = connected;
-        System.out.println("\nNetwork name : " + name + "\nnetwork signal : " + signal + "\nnetwork connexion status : " + connected);
+        System.out.println("\nNetwork name : " + name + "\nnetwork signal : " + signal);
     }
 }
 
