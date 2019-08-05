@@ -2,10 +2,9 @@
 ---
 name: Test Employee
 age: 30
+birthday: 1980-07-12
 address:
-  line1: My Address Line 1
-  line2: Address line 2
-  city: Washington D.C.
+  line: My Address Line 1
   zip: 20000
 roles:
   - USER
