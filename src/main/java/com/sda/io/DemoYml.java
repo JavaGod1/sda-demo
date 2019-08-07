@@ -14,7 +14,10 @@ public class DemoYml {
         // create a person - local date (java 8)
         Person person = ObjectFactory.createAPerson();
 
-        CustomYmlWriter customYmlWriter = new CustomYmlWriter();
-        customYmlWriter.write(student);
+//        CustomYmlWriter customYmlWriter = new CustomYmlWriter();
+//        customYmlWriter.write(student);
+
+        CustomYmlReader customYmlReader = new CustomYmlReader();
+        customYmlReader.read("C:\\Users\\bcs\\IdeaProjects\\sda-demo\\src\\main\\resources\\person-input.yml");
     }
 }

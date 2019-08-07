@@ -2,27 +2,22 @@ package com.sda.io;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.File;
-import java.net.URISyntaxException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.IOException;
 
 public class CustomYmlReader {
-    public void read(Path path) {
+    public void read(String absolutePath) {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
 
         try {
-            Path shortPath = Paths.get(this.getClass()
-                    .getClassLoader()
-                    .getResource("io/person-output.yml").toURI());
-
-            File file = new File(shortPath.toString());
-//            mapper.reader(file, student);
-        } catch (URISyntaxException e) {
-            System.out.println("wrong output path");
-//        } catch (IOException e) {
-            System.out.println("error writing to file");
+            File file = new File(absolutePath);
+            Employee employee = mapper.readValue(file, Employee.class);
+            System.out.println(ReflectionToStringBuilder.toString(employee, ToStringStyle.MULTI_LINE_STYLE));
+        } catch (IOException e) {
+            System.out.println("error reading from file");
         }
     }
 }
